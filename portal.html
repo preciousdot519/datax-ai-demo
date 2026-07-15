@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataX AI - Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { 
+      background: linear-gradient(135deg, #041C4D 0%, #0A2540 100%); 
+    }
+    .logo-img {
+      filter: drop-shadow(0 0 20px rgba(29, 212, 252, 0.5));
+    }
+  </style>
+</head>
+<body class="min-h-screen text-white">
+  <nav class="border-b border-white/10 bg-black/40 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="Logo [Dark BG]-Transparent.png" alt="DataX AI" class="h-9 logo-img">
+        <div>
+          <span class="text-2xl font-bold tracking-tight">DataX AI</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <span id="greeting" class="text-sm"></span>
+        <button onclick="logout()" 
+                class="px-5 py-2 bg-white/10 hover:bg-white/20 rounded-2xl text-sm transition">
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-4xl font-semibold mb-2">Welcome back, <span id="username" class="text-[#1DD4FC]"></span>!</h2>
+    <p class="text-gray-400">Your AI-powered workspace</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      <!-- AI Agents -->
+      <div class="bg-white/10 border border-white/20 rounded-3xl p-8">
+        <h3 class="font-semibold text-xl mb-4">AI Agents</h3>
+        <p class="text-5xl font-bold text-[#1DD4FC]">7 <span class="text-2xl text-gray-400">/ 12</span></p>
+        <p class="text-sm text-gray-400 mt-2">Active / Total Agents</p>
+      </div>
+      
+      <!-- Analytics -->
+      <div class="bg-white/10 border border-white/20 rounded-3xl p-8">
+        <h3 class="font-semibold text-xl mb-4">Model Accuracy</h3>
+        <p class="text-5xl font-bold">97.8%</p>
+        <p class="text-sm text-gray-400 mt-2">Average across agents</p>
+      </div>
+      
+      <!-- Usage -->
+      <div class="bg-white/10 border border-white/20 rounded-3xl p-8">
+        <h3 class="font-semibold text-xl mb-4">Tokens Processed</h3>
+        <p class="text-5xl font-bold">4.8k</p>
+        <p class="text-sm text-gray-400 mt-2">Today</p>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-white/10 border border-white/20 rounded-3xl p-8">
+      <h3 class="font-semibold text-xl mb-6">Quick Actions</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- View Reports (Left) -->
+        <button onclick="alert('Opening Reports Dashboard... (Demo)')" 
+                class="p-6 bg-white/5 hover:bg-white/10 rounded-2xl text-left transition">
+          <div class="font-medium text-[#1DD4FC]">View Reports</div>
+          <div class="text-sm text-gray-400">Access detailed analytics &amp; insights</div>
+        </button>
+        
+        <!-- Agent Configuration (Right) -->
+        <button onclick="alert('Opening Agent Configuration... (Demo)')" 
+                class="p-6 bg-white/5 hover:bg-white/10 rounded-2xl text-left transition">
+          <div class="font-medium">Agent Configuration</div>
+          <div class="text-sm text-gray-400">Manage &amp; customize your AI agents</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if (!localStorage.getItem('loggedIn')) {
+      window.location.href = 'index.html';
+    }
+
+    const user = localStorage.getItem('user') || 'Demo User';
+    document.getElementById('username').textContent = user;
+    document.getElementById('greeting').textContent = `Hello, ${user.split('@')[0] || user}`;
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
