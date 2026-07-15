@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataX AI - AI SaaS Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
+    .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-white">
+  <div class="max-w-md w-full mx-4">
+    <div class="text-center mb-10">
+      <h1 class="text-5xl font-bold tracking-tight">DataX AI</h1>
+      <p class="text-xl text-sky-400 mt-2">AI SaaS Platform</p>
+    </div>
+
+    <div class="glass rounded-3xl shadow-2xl p-10 border border-white/20">
+      <h2 class="text-3xl font-semibold text-center mb-8">Sign In</h2>
+      
+      <form id="loginForm" class="space-y-6">
+        <div>
+          <label class="block text-sm mb-2">Username or Email</label>
+          <input type="text" id="username" 
+                 class="w-full px-5 py-4 bg-white/10 border border-white/30 rounded-2xl focus:outline-none focus:border-sky-400 text-white placeholder-gray-400"
+                 placeholder="demo@datax.ai" required>
+        </div>
+        
+        <div>
+          <label class="block text-sm mb-2">Password</label>
+          <input type="password" id="password" 
+                 class="w-full px-5 py-4 bg-white/10 border border-white/30 rounded-2xl focus:outline-none focus:border-sky-400 text-white placeholder-gray-400"
+                 placeholder="••••••••" required>
+        </div>
+
+        <button type="submit"
+                class="w-full py-4 bg-sky-500 hover:bg-sky-600 transition font-semibold text-lg rounded-2xl">
+          Sign In
+        </button>
+      </form>
+
+      <p id="error" class="text-red-400 text-center mt-4 hidden">Invalid username or password</p>
+
+      <div class="text-center text-sm text-gray-400 mt-8">
+        Demo credentials:<br>
+        <span class="font-mono">Username: demo</span> | <span class="font-mono">Password: 1234</span>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-gray-500 mt-8">© 2026 DataX AI • Simulation Only</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
